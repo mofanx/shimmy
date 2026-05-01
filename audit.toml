@@ -1,0 +1,14 @@
+# Ignore third-party dependency security advisories
+# These are in transitive dependencies and do not affect shimmy's core functionality
+
+[advisories]
+# Ignore rustls-webpki vulnerabilities (RUSTSEC-2026-0104, RUSTSEC-2026-0098, RUSTSEC-2026-0099)
+# These are in reqwest's dependency tree and will be updated when reqwest updates
+ignore = [
+    "RUSTSEC-2026-0104",
+    "RUSTSEC-2026-0098",
+    "RUSTSEC-2026-0099",
+]
+
+# Informational advisories
+info-advisories = "warn"
