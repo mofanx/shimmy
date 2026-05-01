@@ -199,7 +199,7 @@ jobs:
     - name: Run vulnerability audit
       run: |
         echo "🔒 Scanning for known vulnerabilities"
-        cargo audit --color always
+        cargo audit --color always --file audit.toml
 
     - name: Run supply chain security checks
       run: |
