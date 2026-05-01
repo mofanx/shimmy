@@ -76,6 +76,9 @@ ignore = [
     { id = "RUSTSEC-2026-0104", reason = "Transitive dep from reqwest 0.11.x - waiting for ecosystem to migrate to reqwest 0.12" },
     { id = "RUSTSEC-2026-0098", reason = "Transitive dep from reqwest 0.11.x - waiting for ecosystem to migrate to reqwest 0.12" },
     { id = "RUSTSEC-2026-0099", reason = "Transitive dep from reqwest 0.11.x - waiting for ecosystem to migrate to reqwest 0.12" },
+    # rand unsound - transitive dependency through tungstenite and axum
+    # This requires specific conditions to trigger (custom logger + trace logging), not typical in shimmy usage
+    { id = "RUSTSEC-2026-0097", reason = "Transitive dep from tungstenite/axum - requires custom logger + trace logging to trigger, not typical in shimmy usage" },
 ]
 # If this is true, then cargo deny will use the git executable to fetch advisory database.
 # If this is false, then it uses a built-in git library.
