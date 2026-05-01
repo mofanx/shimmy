@@ -71,6 +71,11 @@ ignore = [
     # rustls-pemfile unmaintained - transitive dependency through reqwest 0.11.x
     # We'll update when reqwest 0.12.x is stable and all our dependencies support it
     { id = "RUSTSEC-2025-0134", reason = "Transitive dep from reqwest 0.11.x - waiting for ecosystem to migrate to reqwest 0.12" },
+    # rustls-webpki vulnerabilities - transitive dependency through reqwest 0.11.x
+    # These are in the rustls 0.21.x dependency tree, will be fixed when reqwest updates to 0.12.x
+    { id = "RUSTSEC-2026-0104", reason = "Transitive dep from reqwest 0.11.x - waiting for ecosystem to migrate to reqwest 0.12" },
+    { id = "RUSTSEC-2026-0098", reason = "Transitive dep from reqwest 0.11.x - waiting for ecosystem to migrate to reqwest 0.12" },
+    { id = "RUSTSEC-2026-0099", reason = "Transitive dep from reqwest 0.11.x - waiting for ecosystem to migrate to reqwest 0.12" },
 ]
 # If this is true, then cargo deny will use the git executable to fetch advisory database.
 # If this is false, then it uses a built-in git library.
