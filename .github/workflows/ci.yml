@@ -297,6 +297,13 @@ jobs:
         echo "✅ Build verification complete for ${{ matrix.target }}"
         ls -la target/${{ matrix.target }}/release/
 
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: shimmy-${{ matrix.target }}
+        path: target/${{ matrix.target }}/release/shimmy
+        retention-days: 7
+
   # Professional Quality Gate Summary
   quality-gate:
     name: Professional Quality Gate
